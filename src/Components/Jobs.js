@@ -29,14 +29,13 @@ const JOBS_QUERY = gql`
 
 function Jobs() {
 
-    {/*Hook for getting data from searchTerm*/}
+    //Hook for getting data from searchTerm
     const [searchTerm, setSearchTerm] = useState('');
-    {/*Changes Value of searchTerm as user inputs*/}
+    //Changes Value of searchTerm as user inputs
     const handleChange = event => { 
         setSearchTerm(event.target.value);
     };
-
-    {/*Passing Query and getting data from GraphQL Job API*/}
+    //Passing Query and getting data from GraphQL Job API
     const { loading, error, data } = useQuery(JOBS_QUERY);
     //while query is running
     if (loading) return <h5>Loading...</h5>
